@@ -1,21 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AUC computer architecture lab
+// Engineer: Mokhtar Salem
 // 
 // Create Date: 03/14/2023 08:58:31 AM
-// Design Name: 
+// Design Name: RISC-V data path
 // Module Name: DataPath
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Project Name: RISC-V
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
