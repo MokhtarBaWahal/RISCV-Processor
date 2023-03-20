@@ -26,30 +26,32 @@ module DataPath( input clk, reset
     
     reg [31:0]pc;
     wire [31:0]instruction;
-    //input [5:0] addr, output [31:0] data_out
-    InstMem instru_mem (.addr(pc[7:2]), .data_out(instruction));
-    
-    //branch, MR, Mreg, Memwrite, ALUsrc, Regwrite, output reg [1:0] module ALUControlUnit
-    
     wire branch, MR, Mreg, Memwrite, ALUsrc, Regwrite;
     wire [1:0] ALUop;
-    
-    ControlUnit Control (. inst(instruction[6:0]), .branch(branch), .MR(MR), .Mreg(Mreg), .Memwrite(Memwrite), .ALUsrc(ALUsrc ), .Regwrite(Regwrite), .ALUop(ALUop));
-    
     reg [31:0] writeData;
     wire [31:0] R1;
     wire [31:0] R2;
-    //input clk, input [4:0] readAd1, readAd2, writeAd1, input [N-1:0] writeData, input regwrite, input reset, output [N-1:0] R1, R2
-   RegFile  ReadREgFILE (.clk(clk), .readAd1( instruction[19:15]),.readAd2( instruction[24:20]), .writeAd1( instruction[11:7]), .writeData(writeData), 
-    .regwrite(Regwrite ), .reset(reset), .R1(R1), .R2(R2));
-    
     wire [31:0] immediate ;
-    immGen immGenerator ( .A(instruction ), .B(immediate ));
-    
     wire [3:0] ALUselec;
     wire [31:0] ALUout;
     wire zeroflag;
     wire [31:0] data_out;
+    wire [31:0] immediate_shited ;
+    wire [31:0] pc_mod;
+    wire [31:0] pc_nor;
+    //input [5:0] addr, output [31:0] data_out
+    InstMem instru_mem (.addr(pc[7:2]), .data_out(instruction));
+    
+    //branch, MR, Mreg, Memwrite, ALUsrc, Regwrite, output reg [1:0] module ALUControlUnit
+    ControlUnit Control (. inst(instruction[6:0]), .branch(branch), .MR(MR), .Mreg(Mreg), .Memwrite(Memwrite), .ALUsrc(ALUsrc ), .Regwrite(Regwrite), .ALUop(ALUop));
+    
+    //input clk, input [4:0] readAd1, readAd2, writeAd1, input [N-1:0] writeData, input regwrite, input reset, output [N-1:0] R1, R2
+   RegFile  ReadREgFILE (.clk(clk), .readAd1( instruction[19:15]),.readAd2( instruction[24:20]), .writeAd1( instruction[11:7]), .writeData(writeData), 
+    .regwrite(Regwrite ), .reset(reset), .R1(R1), .R2(R2));
+    
+    
+    immGen immGenerator ( .A(instruction ), .B(immediate ));
+
     //ALUControlUnit ( input [31:0] inst, output reg [3:0] ALUselec 
     ALUControlUnit  ALUControl (.inst(instruction),.ALUop(ALUop ), .ALUselec( ALUselec));
     //input [N-1:0] A, B, input [3:0] sel, output [N-1:0] ALUout, output zeroflag
@@ -62,11 +64,11 @@ module DataPath( input clk, reset
     if (Mreg ==1'b1 )  writeData = data_out;
     else  writeData = ALUout;
     end
-    wire [31:0] immediate_shited ;
+
+    
 //    shiftl shiftgate (.A(immediate), .B(immediate_shited ));
     assign immediate_shited =immediate ;
-    wire [31:0] pc_mod;
-    wire [31:0] pc_nor;
+
     FCA adder (.A(pc ), .B(immediate_shited ), .S(pc_mod));
     FCA adder1 (.A(pc ), .B(32'b0100 ), .S(pc_nor));
     
