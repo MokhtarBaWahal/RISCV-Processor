@@ -1,0 +1,16 @@
+0.7
+2020.2
+Apr 18 2022
+16:05:34
+C:/Users/mokhtarsalem/RISCVporcessor/RISCVporcessor.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
+C:/Users/mokhtarsalem/RISCVporcessor/RISCVporcessor.srcs/sim_1/new/test.v,1678782357,verilog,,,,test,,,,,,,,
+C:/Users/mokhtarsalem/RISCVporcessor/RISCVporcessor.srcs/sources_1/new/DataPath.v,1678783621,verilog,,C:/Users/mokhtarsalem/srcs/FCA.v,,DataPath,,,,,,,,
+C:/Users/mokhtarsalem/srcs/ALUControlUnit.v,1678780695,verilog,,C:/Users/mokhtarsalem/srcs/ControlUnit.v,,ALUControlUnit,,,,,,,,
+C:/Users/mokhtarsalem/srcs/ControlUnit.v,1678040587,verilog,,C:/Users/mokhtarsalem/srcs/DataMem.v,,ControlUnit,,,,,,,,
+C:/Users/mokhtarsalem/srcs/DataMem.v,1678781531,verilog,,C:/Users/mokhtarsalem/RISCVporcessor/RISCVporcessor.srcs/sources_1/new/DataPath.v,,DataMem,,,,,,,,
+C:/Users/mokhtarsalem/srcs/FCA.v,1677569438,verilog,,C:/Users/mokhtarsalem/srcs/InstMem.v,,FA;FCA,,,,,,,,
+C:/Users/mokhtarsalem/srcs/InstMem.v,1678781528,verilog,,C:/Users/mokhtarsalem/srcs/RegFile.v,,InstMem,,,,,,,,
+C:/Users/mokhtarsalem/srcs/RegFile.v,1678036458,verilog,,C:/Users/mokhtarsalem/srcs/immGen.v,,DFlipFlop;Nreg;RegFile,,,,,,,,
+C:/Users/mokhtarsalem/srcs/immGen.v,1678176646,verilog,,C:/Users/mokhtarsalem/srcs/nBitALU.v,,immGen,,,,,,,,
+C:/Users/mokhtarsalem/srcs/nBitALU.v,1678033730,verilog,,C:/Users/mokhtarsalem/srcs/shiftl.v,,mux;nBitALU,,,,,,,,
+C:/Users/mokhtarsalem/srcs/shiftl.v,1678780206,verilog,,C:/Users/mokhtarsalem/RISCVporcessor/RISCVporcessor.srcs/sim_1/new/test.v,,shiftl,,,,,,,,

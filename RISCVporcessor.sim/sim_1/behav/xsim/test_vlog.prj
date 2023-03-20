@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../srcs/ALUControlUnit.v" \
+"../../../../../srcs/ControlUnit.v" \
+"../../../../../srcs/DataMem.v" \
+"../../../../RISCVporcessor.srcs/sources_1/new/DataPath.v" \
+"../../../../../srcs/FCA.v" \
+"../../../../../srcs/InstMem.v" \
+"../../../../../srcs/RegFile.v" \
+"../../../../../srcs/immGen.v" \
+"../../../../../srcs/nBitALU.v" \
+"../../../../../srcs/shiftl.v" \
+"../../../../RISCVporcessor.srcs/sim_1/new/test.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
